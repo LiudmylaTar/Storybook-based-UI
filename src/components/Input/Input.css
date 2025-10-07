@@ -1,0 +1,68 @@
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 4px;
+}
+.inputField {
+  border: 1px solid rgba(17, 16, 28, 0.1);
+  border-radius: 12px;
+  padding: 18px 16px;
+  width: 100%;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: #11101c;
+  outline: none;
+  transition: box-shadow 300ms ease, border 300ms ease;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 18px;
+}
+.inputLabel {
+  font-size: 16px;
+  color: #1f1f1f;
+  white-space: nowrap;
+  margin: 0;
+}
+.inputField:focus,
+.inputField:hover {
+  box-shadow: 0 0 0 4px rgba(78, 70, 180, 0.2);
+  border: 1px solid #989b43;
+}
+.icon-btn {
+  position: absolute;
+  top: 28px;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.eyeIcon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #000000;
+}
+.clear-btn {
+  fill: none;
+  stroke: #000000;
+}
+
+.inputError {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
