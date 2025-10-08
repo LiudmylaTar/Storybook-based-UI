@@ -22,7 +22,9 @@ const FormWrapper = ({ children }: { children: React.ReactNode }) => {
 export const TextInput: Story = {
   render: () => (
     <FormWrapper>
-      <Input name="text" placeholder="Text input" />
+      <div style={{ maxWidth: "300px", margin: "0 auto" }}>
+        <Input name="text" placeholder="Text input" />
+      </div>
     </FormWrapper>
   ),
 };
@@ -30,7 +32,9 @@ export const TextInput: Story = {
 export const PasswordInput: Story = {
   render: () => (
     <FormWrapper>
-      <Input name="password" type="password" placeholder="Password" />
+      <div style={{ maxWidth: "300px", margin: "0 auto" }}>
+        <Input name="password" type="password" placeholder="Password" />
+      </div>
     </FormWrapper>
   ),
 };
@@ -38,7 +42,9 @@ export const PasswordInput: Story = {
 export const ClearableInput: Story = {
   render: () => (
     <FormWrapper>
-      <Input name="text" placeholder="Clearable input" clearable />
+      <div style={{ maxWidth: "300px", margin: "0 auto" }}>
+        <Input name="text" placeholder="Clearable input" clearable />
+      </div>
     </FormWrapper>
   ),
 };
@@ -46,7 +52,9 @@ export const ClearableInput: Story = {
 export const NumberInput: Story = {
   render: () => (
     <FormWrapper>
-      <Input name="number" type="number" placeholder="Number input" />
+      <div style={{ maxWidth: "300px", margin: "0 auto" }}>
+        <Input name="number" type="number" placeholder="Number input" />
+      </div>
     </FormWrapper>
   ),
 };

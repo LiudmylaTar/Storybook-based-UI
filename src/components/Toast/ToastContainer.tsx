@@ -1,6 +1,6 @@
 import React from "react";
 import Toast from "./Toast";
-import type { ToastItem } from "../hooks/useToast";
+import type { ToastItem } from "../../hooks/useToast";
 
 interface ToastContainerProps {
   toasts: ToastItem[];

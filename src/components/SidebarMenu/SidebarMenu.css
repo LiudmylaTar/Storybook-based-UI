@@ -1,0 +1,136 @@
+/* OVERLAY (dark background) */
+.sm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 50;
+  transition: background 0.25s ease;
+}
+
+/* Sidebar base */
+.sm-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  box-sizing: border-box;
+  z-index: 60;
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 0.2s;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Positioning for left/right */
+.sm-sidebar.right {
+  right: 0;
+  transform: translateX(100%);
+}
+.sm-sidebar.left {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+/* Modes: overlay vs push */
+.sm-sidebar.overlay.open {
+  transform: translateX(0%);
+}
+.sm-sidebar.overlay.closed {
+  transform: translateX(100%);
+}
+
+/* Push mode - remains visible in DOM; use .open/.closed to animate */
+.sm-sidebar.push.open {
+  transform: translateX(0%);
+}
+.sm-sidebar.push.closed.right {
+  transform: translateX(100%);
+}
+.sm-sidebar.push.closed.left {
+  transform: translateX(-100%);
+}
+
+/* Header */
+.sm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.sm-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.sm-close-btn {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Menu items */
+.sm-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.sm-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  font-size: inherit;
+}
+.sm-menu-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* submenu */
+.sm-submenu-wrapper {
+  overflow: hidden;
+  transition: height 0.28s ease, opacity 0.28s ease, transform 0.28s ease;
+  height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  padding-left: 8px;
+}
+.sm-submenu-wrapper.open {
+  height: auto; /* allow content height; but for smoother animation you can calculate height in JS */
+  opacity: 1;
+  transform: translateY(0);
+}
+.sm-submenu-item {
+  padding: 8px 10px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+.sm-submenu-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* chevron rotation */
+.sm-chevron {
+  transition: transform 0.2s;
+}
+.sm-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* RESPONSIVE: on larger screens we might show push as fixed width */
+@media (min-width: 900px) {
+  .sm-sidebar {
+    max-width: 360px;
+  }
+}
